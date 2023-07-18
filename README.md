@@ -1,4 +1,35 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+React Native Project 
+
+# The Directory Structure
+Here is a bird’s eye view of the recommended directory structure:
+
+```bash
+-src
+    |--- assets
+    |--- screens
+    |--- navigation
+    |--- services
+    |--- components
+    |--- types
+    |--- redux
+    |--- utils
+```
+Let’s go through each directory and its purpose in more detail.
+
+## 1. assets
+For optimal organization, store all static assets, like fonts and images, in the "assets" directory. Consider creating individual subdirectories within it for each asset type. For example:
+```bash
+assets
+  |--- fonts
+  |--- images
+```
+## 2. screens
+In the project structure, place all application screens or pages within the "screens" directory. Each screen should have its dedicated directory with the following files:
+
+index.js: This file will export the screenName as the default export for a shortened import path.
+styles.ts: Store the screen's styles in this file.
+helper.ts: For utility functions like business logic or state management, you can use this file. For instance, you could have a function that returns the buttonColor based on a specific status. It's advisable to keep the logic in your component file to a minimum. This approach promotes code abstraction and testability.
+
 
 # Getting Started
 
@@ -14,8 +45,6 @@ To start Metro, run the following command from the _root_ of your React Native p
 # using npm
 npm start
 
-# OR using Yarn
-yarn start
 ```
 
 ## Step 2: Start your Application
@@ -28,8 +57,6 @@ Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _roo
 # using npm
 npm run android
 
-# OR using Yarn
-yarn android
 ```
 
 ### For iOS
@@ -38,8 +65,6 @@ yarn android
 # using npm
 npm run ios
 
-# OR using Yarn
-yarn ios
 ```
 
 If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
@@ -59,21 +84,6 @@ Now that you have successfully run the app, let's modify it.
 
 You've successfully run and modified your React Native App. :partying_face:
 
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
 # Troubleshooting
 
 If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
