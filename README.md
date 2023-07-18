@@ -26,8 +26,10 @@ assets
 ## 2. screens
 In the project structure, place all application screens or pages within the "screens" directory. Each screen should have its dedicated directory with the following files:
 
-index.js: This file will export the screenName as the default export for a shortened import path.
+```index.js:``` This file will export the screenName as the default export for a shortened import path.
+
 styles.ts: Store the screen's styles in this file.
+
 helper.ts: For utility functions like business logic or state management, you can use this file. For instance, you could have a function that returns the buttonColor based on a specific status. It's advisable to keep the logic in your component file to a minimum. This approach promotes code abstraction and testability.
 
 
