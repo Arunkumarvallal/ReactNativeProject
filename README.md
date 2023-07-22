@@ -60,6 +60,16 @@ In the project, the navigation directory is the designated location for storing 
 
 In the project, the "services" directory serves as the designated location for storing all code related to external services, particularly APIs. Organizing your services into separate subdirectories for each service type is a recommended practice. This structure allows for better maintainability and clarity when dealing with different services.
 
+```bash
+screens
+  |--- API
+  |--- AuthService
+  |--- DataService
+  |--- PaymentService
+  |--- ThirdPartyService
+  |--- NotificationService
+ 
+```
 Within the "services" directory, you may have the following subdirectories:
 
 ```API``` This subdirectory is intended for code related to general API communication or for common API functionalities that may be shared across different services.
