@@ -130,7 +130,7 @@ redux
 
 ```slices``` This folder should contain all the Redux slices in your app. A Redux slice represents a distinct piece of the Redux store that can be updated independently of the rest of the store. Each slice should be placed in a separate file with a descriptive name that reflects the data or functionality it manages. For example, you can have a ```UserSlice.ts``` file to handle user-related data.
 
-In "store.ts", you would configure and create the Redux store:
+In ```store.ts```, you would configure and create the Redux store:
 
 ```ts
 // store.ts
@@ -148,7 +148,7 @@ export default store;
 
 ```
 
-In "UserSlice.ts", you would define the Redux slice for managing user-related data:
+In ```UserSlice.ts```, you would define the Redux slice for managing user-related data:
 ```ts
 // UserSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
@@ -182,6 +182,34 @@ export const { setUser } = userSlice.actions;
 export default userSlice.reducer;
 
 ```
+## 8. utils
+The "utils" folder is a convenient location to house various utility functions and helper classes that don't directly belong to a specific feature or module of the app. These utility functions can be utilized across different parts of the app to perform common tasks, enhance functionality, or handle specific operations in a reusable and centralized manner.
+
+```bash
+utils
+    |--- Analytics.ts
+    |--- Validator.ts
+    |--- Logger.ts
+    |--- ErrorManager.ts
+    |--- string.ts
+    |--- constants.ts
+    |--- enums.ts
+```
+
+```Analytics.ts``` This file may contain functions or classes responsible for handling analytics events, such as tracking user interactions, page views, or custom events for better understanding user behavior and app performance.
+
+```Validator.ts``` The "Validator.ts" file can include utility functions or classes related to data validation. These functions can be used to validate user inputs, form fields, or any other data that needs to conform to specific rules or constraints.
+
+```Logger.ts``` In "Logger.ts," you may have functions or classes dedicated to logging activities and messages. These utilities can help with debugging, error tracking, and providing insights into the application's behavior during development.
+
+```ErrorManager.ts``` The "ErrorManager.ts" file can contain utility functions or classes responsible for handling and managing errors in a consistent manner. This may include custom error types, error handling strategies, or error reporting to external services.
+
+```string.ts``` In this file, you might find utility functions related to string manipulation, such as formatting, truncating, or parsing strings.
+
+```constants.ts``` The "constants.ts" file can hold various constants and configuration values used throughout the app. This keeps the constants centralized, making it easier to modify them in one place if needed.
+
+```enums.ts``` In "enums.ts," you can define enumerations or constant sets that represent specific options or choices within the app. This can help avoid hardcoding values and provide a more semantic way of representing data.
+
 
 # Getting Started
 
