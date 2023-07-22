@@ -26,12 +26,25 @@ assets
 ## 2. screens
 In the project structure, place all application screens or pages within the "screens" directory. Each screen should have its dedicated directory with the following files:
 
-```index.js:``` This file will export the screenName as the default export for a shortened import path.
+```index.js``` This file will export the screenName as the default export for a shortened import path.
 
-```styles.ts:``` Store the screen's styles in this file.
+```styles.ts``` Store the screen's styles in this file.
 
-```helper.ts:``` For utility functions like business logic or state management, you can use this file. For instance, you could have a function that returns the buttonColor based on a specific status. It's advisable to keep the logic in your component file to a minimum. This approach promotes code abstraction and testability.
+```helper.ts``` For utility functions like business logic or state management, you can use this file. For instance, you could have a function that returns the buttonColor based on a specific status. It's advisable to keep the logic in your component file to a minimum. This approach promotes code abstraction and testability.
 
+```components (optional):``` Any reusable components used by the screen.
+
+##  3. navigation
+
+In the project, the navigation directory is the designated location for storing all code related to navigation functionality. This directory should include the following components:
+
+```NavigationContainer``` This is the top-level component that acts as a wrapper for all the screens in your application. It manages the navigation state and provides the necessary context for navigation to work correctly.
+
+```Route``` The "Route" folder is where you define and manage your application routes. This includes configuring various navigation stacks, tab bars, and drawers, which are essential for defining the flow between different screens or sections of your app.
+
+```NavigationService``` The "NavigationService" file is responsible for encapsulating the reference to your defined routes. It acts as an intermediary layer for handling navigation from outside components, such as deep links or notifications. This way, other parts of your app can trigger navigation without directly accessing the navigation components.
+
+```linking``` The configuration for deep linking.
 
 # Getting Started
 
