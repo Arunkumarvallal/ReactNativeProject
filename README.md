@@ -42,7 +42,7 @@ In the project structure, place all application screens or pages within the "scr
 
 ```helper.ts``` For utility functions like business logic or state management, you can use this file. For instance, you could have a function that returns the buttonColor based on a specific status. It's advisable to keep the logic in your component file to a minimum. This approach promotes code abstraction and testability.
 
-```components (optional):``` Any reusable components used by the screen.
+```components (optional)``` Any reusable components used by the screen.
 
 ##  3. navigation
 
@@ -56,6 +56,53 @@ In the project, the navigation directory is the designated location for storing 
 
 ```linking``` The configuration for deep linking.
 
+## 4. services
+
+In the project, the "services" directory serves as the designated location for storing all code related to external services, particularly APIs. Organizing your services into separate subdirectories for each service type is a recommended practice. This structure allows for better maintainability and clarity when dealing with different services.
+
+Within the "services" directory, you may have the following subdirectories:
+
+```API``` This subdirectory is intended for code related to general API communication or for common API functionalities that may be shared across different services.
+
+```AuthService``` In this subdirectory, you would place code related to authentication services, such as handling user login, registration, and token management.
+
+```DataService``` The "DataService" subdirectory is where you'd put code for handling data-related services, such as fetching, updating, and managing data from various sources.
+
+```PaymentService``` This subdirectory would contain code specific to payment-related services, such as integrating with payment gateways and processing transactions.
+
+```NotificationService``` In this subdirectory, you would place code for handling push notifications and interacting with notification APIs.
+
+```ThirdPartyService``` For any other external services not fitting into the above categories, you can create a "ThirdPartyService" subdirectory to accommodate them.
+
+## 5. components
+
+The "components" directory is the designated location for storing all reusable components. To ensure a consistent and organized structure, each component should have its own directory containing the following files:
+
+```index.ts``` This file serves as the main entry point for the component, allowing you to import and use it more conveniently elsewhere in your codebase.
+
+```ComponentName.tsx``` The TypeScript file (with the .tsx extension) is the actual implementation of the component. It contains the JSX code and TypeScript typings for the component's props and state, ensuring type safety and better code clarity.
+
+```styles.ts``` The "styles.ts" file holds the styling information for the component. You can define the component's CSS or any other styling related to its appearance in this file.
+
+## 6. types
+
+The "types" folder serves as the designated location for storing all TypeScript interfaces and types. Utilizing TypeScript in your project allows you to catch errors during compile-time instead of run-time, leading to a more robust and safer codebase.
+
+```bash
+// UserInterface.ts
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  // Other user-related properties
+}
+
+export interface UserProfile {
+  userId: string;
+  bio: string;
+  // Other profile-related properties
+}
+```
 # Getting Started
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
