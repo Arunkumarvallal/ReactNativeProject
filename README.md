@@ -98,7 +98,7 @@ The "components" directory is the designated location for storing all reusable c
 
 The "types" folder serves as the designated location for storing all TypeScript interfaces and types. Utilizing TypeScript in your project allows you to catch errors during compile-time instead of run-time, leading to a more robust and safer codebase.
 
-```bash
+```ts
 // UserInterface.ts
 export interface User {
   id: string;
@@ -113,6 +113,76 @@ export interface UserProfile {
   // Other profile-related properties
 }
 ```
+
+## 7. redux
+
+```bash
+redux
+  |--- store.ts
+  |--- slices
+         |--- UserSlice.ts
+         |--- PostSlice.ts
+```
+
+ if you are using Redux as the state management library, it's a good practice to create a separate folder to organize all Redux-related files. The "redux" folder should contain the following files:
+
+```store.ts``` This file is responsible for creating the Redux store and configuring it with any middleware or enhancers required for your app. The store is the central place that holds the state of your application.
+
+```slices``` This folder should contain all the Redux slices in your app. A Redux slice represents a distinct piece of the Redux store that can be updated independently of the rest of the store. Each slice should be placed in a separate file with a descriptive name that reflects the data or functionality it manages. For example, you can have a ```UserSlice.ts``` file to handle user-related data.
+
+In "store.ts", you would configure and create the Redux store:
+
+```ts
+// store.ts
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import rootReducer from './slices';
+
+const middleware = [...getDefaultMiddleware()];
+
+const store = configureStore({
+  reducer: rootReducer,
+  middleware,
+});
+
+export default store;
+
+```
+
+In "UserSlice.ts", you would define the Redux slice for managing user-related data:
+```ts
+// UserSlice.ts
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+interface UserState {
+  id: string;
+  name: string;
+  email: string;
+  // Other user-related properties
+}
+
+const initialState: UserState = {
+  id: '',
+  name: '',
+  email: '',
+  // Other initial values
+};
+
+const userSlice = createSlice({
+  name: 'user',
+  initialState,
+  reducers: {
+    setUser: (state, action: PayloadAction<UserState>) => {
+      return { ...state, ...action.payload };
+    },
+    // Other user-related reducers
+  },
+});
+
+export const { setUser } = userSlice.actions;
+export default userSlice.reducer;
+
+```
+
 # Getting Started
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
