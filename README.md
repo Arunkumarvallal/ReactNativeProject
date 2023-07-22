@@ -130,70 +130,18 @@ redux
 
 ```slices``` This folder should contain all the Redux slices in your app. A Redux slice represents a distinct piece of the Redux store that can be updated independently of the rest of the store. Each slice should be placed in a separate file with a descriptive name that reflects the data or functionality it manages. For example, you can have a ```UserSlice.ts``` file to handle user-related data.
 
-In ```store.ts```, you would configure and create the Redux store:
-
-```ts
-// store.ts
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import rootReducer from './slices';
-
-const middleware = [...getDefaultMiddleware()];
-
-const store = configureStore({
-  reducer: rootReducer,
-  middleware,
-});
-
-export default store;
-
-```
-
-In ```UserSlice.ts```, you would define the Redux slice for managing user-related data:
-```ts
-// UserSlice.ts
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-interface UserState {
-  id: string;
-  name: string;
-  email: string;
-  // Other user-related properties
-}
-
-const initialState: UserState = {
-  id: '',
-  name: '',
-  email: '',
-  // Other initial values
-};
-
-const userSlice = createSlice({
-  name: 'user',
-  initialState,
-  reducers: {
-    setUser: (state, action: PayloadAction<UserState>) => {
-      return { ...state, ...action.payload };
-    },
-    // Other user-related reducers
-  },
-});
-
-export const { setUser } = userSlice.actions;
-export default userSlice.reducer;
-
-```
 ## 8. utils
 The "utils" folder is a convenient location to house various utility functions and helper classes that don't directly belong to a specific feature or module of the app. These utility functions can be utilized across different parts of the app to perform common tasks, enhance functionality, or handle specific operations in a reusable and centralized manner.
 
 ```bash
 utils
-    |--- Analytics.ts
-    |--- Validator.ts
-    |--- Logger.ts
-    |--- ErrorManager.ts
-    |--- string.ts
-    |--- constants.ts
-    |--- enums.ts
+  |--- Analytics.ts
+  |--- Validator.ts
+  |--- Logger.ts
+  |--- ErrorManager.ts
+  |--- string.ts
+  |--- constants.ts
+  |--- enums.ts
 ```
 
 ```Analytics.ts``` This file may contain functions or classes responsible for handling analytics events, such as tracking user interactions, page views, or custom events for better understanding user behavior and app performance.
