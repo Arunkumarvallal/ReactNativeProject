@@ -24,6 +24,16 @@ assets
   |--- images
 ```
 ## 2. screens
+
+```bash
+screens
+  |--- Home
+         | --- index.js
+         | --- style.js
+  |--- Settings
+         | --- index.js
+         | --- style.js
+```
 In the project structure, place all application screens or pages within the "screens" directory. Each screen should have its dedicated directory with the following files:
 
 ```index.js``` This file will export the screenName as the default export for a shortened import path.
